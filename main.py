@@ -45,7 +45,14 @@ cursor = db.cursor()# yozish metodi ishga tushirish
 
 # Ma'lumorni Ko'rish
 
-cursor.execute('''SELECT * FROM cars WHERE copmany_id=(SELECT copmany_id FROM company WHERE company_name=?)''',('Mercades Benz',))# patsapros
+# cursor.execute('''SELECT * FROM cars
+# WHERE copmany_id=(SELECT copmany_id FROM company WHERE company_name=?)''',('Mercades Benz',))# patsapros
+
+# cursor.execute('''SELECT car, motor, company_name FROM cars
+# JOIN company USING(copmany_id)
+# WHERE copmany_id=(SELECT copmany_id FROM company WHERE company_name=?)''',('Mercades Benz',))# patsapros
+
+
 result = cursor.fetchall()# barcha ma'lumotni olish
 print(result)
 
